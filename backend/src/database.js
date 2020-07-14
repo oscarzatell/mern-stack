@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-const URI = "mongodb://localhost/mernstack";
+/*condicional if eslse*/
+const URI = process.env.MONGODB_URI
+  ? process.env.MONGODB_URI
+  : "mongodb://localhost/databsetest";
 
 mongoose.connect(URI, {
   useNewUrlParser: true,
